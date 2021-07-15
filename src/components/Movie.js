@@ -1,5 +1,5 @@
 import React, {useCallback, useEffect} from 'react'
-import {useParams} from "react-router"
+import {Router, useParams} from "react-router"
 import {connect} from "react-redux"
 import LazyLoad from 'react-lazyload'
 import Container from "@material-ui/core/Container"
@@ -184,20 +184,23 @@ function MovieInfo({movie, loaded, onFavorite}) {
                                 >
                                     <FavoriteIcon/> Add to Favourites
                                 </Button>
+                                <Link to={'/Page404'}  style={{textDecoration: 'none'}}>
                                 <Button
                                  style={{marginLeft: 25}}
-                                 onClick={handleClick}
+                                
                                  variant={handleClick ? "contained" : "outlined"}
                                  color="primary"
                                  aria-label="like"
                                 >
                                    <TheatersIcon /> Show Preview
                                 </Button>
-                                <Button  href="/"
+                                </Link>
+                                <Link to={'/'} style={{textDecoration: 'none'}} >
+                                <Button 
                                 style={{
                                     color: "#1FAA59",
                                     marginLeft : "25px",
-                                    
+                                    textDecoration: 'none'
                                     
                                 }}
                                  
@@ -205,6 +208,7 @@ function MovieInfo({movie, loaded, onFavorite}) {
                                  >
                                    <HomeRounded /> Home
                                 </Button>
+                                </Link>
                             </div>
                             <div style={{marginTop: 10}}>
                                 <Typography component={"div"} style={{marginRight: 15}}>

@@ -2,7 +2,7 @@ import React, {useCallback, useEffect, useState} from "react"
 import AppBar from "@material-ui/core/AppBar"
 import Toolbar from "@material-ui/core/Toolbar"
 import IconButton from "@material-ui/core/IconButton"
-import {Menu as MenuIcon} from "@material-ui/icons"
+import {HomeRounded, Menu as MenuIcon} from "@material-ui/icons"
 import Typography from "@material-ui/core/Typography"
 import {Link} from "react-router-dom"
 import {makeStyles, withStyles} from "@material-ui/core/styles"
@@ -152,7 +152,21 @@ function Navbar(props) {
                         <Link to="/" className={classes.brand}>Movie App 👋</Link>
                     </Typography>
                     
+                                
                     <div style={{marginLeft: 'auto'}}>
+                    <Link to={'/'} style={{textDecoration: 'none'}} >
+                    <Button 
+                                style={{
+                                    color: "#1FAA59",
+                                    marginLeft : "25px",
+                                    textDecoration: 'none'
+                                    
+                                }}
+                                 
+                                 >
+                                   <HomeRounded /> Home
+                                </Button>
+                                </Link>
                         <NavButton component={Link} to="/favorites" color="inherit">
                             <FavoriteIcon style={{marginRight: 10, fill: "#f50057"}}/>
                             Favorites

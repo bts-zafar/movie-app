@@ -158,7 +158,7 @@ function Navbar(props) {
                     <Button 
                                 style={{
                                     color: "#1FAA59",
-                                    marginLeft : "25px",
+                                    marginLeft : "24px",
                                     textDecoration: 'none'
                                     
                                 }}

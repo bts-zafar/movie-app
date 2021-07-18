@@ -172,9 +172,12 @@ function MovieInfo({movie, loaded, onFavorite}) {
                                     <li className={classes.genre} key={genre}>{genre}</li>
                                 ))}
                             </ul>
-                            <div className={classes.vote}>
+                            <div className={classes.vote} >
                                 <Rating value={voteAverage / 2} readOnly/>
                                 <span style={{margin: '2px 0px 0 6px'}}>{voteAverage}/10</span>
+                                <div style={{
+                                    display: 'block'
+                                }}>
                                 <Button
                                     style={{marginLeft: 16}}
                                     onClick={() => onFavorite(id)}
@@ -182,15 +185,13 @@ function MovieInfo({movie, loaded, onFavorite}) {
                                     color="secondary"
                                     aria-label="like"
                                 >
-                                    <FavoriteIcon/> Add to Favourites
+                                    <FavoriteIcon/> &nbsp; {isFavorite ? "" : "Add to Favourites"}
                                 </Button>
                                 <Link to={'/Page404'}  style={{textDecoration: 'none'}}>
                                 <Button
                                  style={{marginLeft: 25}}
-                                
-                                 variant={handleClick ? "contained" : "outlined"}
+                                 variant="outlined"
                                  color="primary"
-                                 aria-label="like"
                                 >
                                    <TheatersIcon /> Show Preview
                                 </Button>
@@ -200,15 +201,14 @@ function MovieInfo({movie, loaded, onFavorite}) {
                                 style={{
                                     color: "#1FAA59",
                                     marginLeft : "25px",
-                                    textDecoration: 'none'
-                                    
+                                    textDecoration: 'none',
                                 }}
-                                 
-                                 variant={handleClick ? "contained" : "outlined"}
+                                 variant="contained"
                                  >
                                    <HomeRounded /> Home
                                 </Button>
                                 </Link>
+                                </div>
                             </div>
                             <div style={{marginTop: 10}}>
                                 <Typography component={"div"} style={{marginRight: 15}}>
@@ -273,7 +273,9 @@ function MovieRecommendations(props) {
     return (
         <Container>
             <section>
-                <h2>Recommended movies</h2>
+                    <h2 style={{
+                        color : 'rgb(255, 255, 0.1)'
+                    }}>Recommended movies</h2>
                 <LazyLoad height={400}>
                     <MovieList
                         isFetching={recommended.isFetching}
@@ -286,7 +288,9 @@ function MovieRecommendations(props) {
                 </LazyLoad>
             </section>
             <section>
-                <h2>Similar movies</h2>
+                <h2 style={{
+                        color : 'rgb(255, 255, 0.1)'
+                    }}>Similar movies</h2>
                 <LazyLoad height={400}>
                     <MovieList
                         isFetching={similar.isFetching}

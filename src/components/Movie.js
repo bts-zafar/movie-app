@@ -176,7 +176,8 @@ function MovieInfo({movie, loaded, onFavorite}) {
                                 <Rating value={voteAverage / 2} readOnly/>
                                 <span style={{margin: '2px 0px 0 6px'}}>{voteAverage}/10</span>
                                 <div style={{
-                                    display: 'block'
+                                    display: 'block',
+                                    padding : '2px 2px 0' 
                                 }}>
                                 <Button
                                     style={{marginLeft: 16}}

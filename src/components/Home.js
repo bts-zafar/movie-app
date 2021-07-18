@@ -26,6 +26,7 @@ const CustomTabs = withStyles({
         // border: '1px solid black',
         overflow: 'hidden',
         background: '#66AD47',
+        color: '#fff'
     },
     indicator: {
         background: 'none'

@@ -23,7 +23,7 @@ const useStyles = makeStyles(theme => ({
             },
             "& $favoriteBtn": {
                 display: 'flex'
-            }
+            },
         },
     },
     posterContainer: {
@@ -142,7 +142,7 @@ function MovieCard({id, title, genres, voteAverage, releaseDate, posterImageUrl,
                 </Button>
             </div>
             <div className={classes.details}>
-                <Typography component="h4" className={classes.movieName}>{title}</Typography>
+                <Typography component="h4" className={classes.movieName} style={{color : '#ff9f43'}}>{title}</Typography>
                 <Typography variant="body1" className={classes.score} style={{backgroundColor: color}}>
                     {vote}
                 </Typography>
